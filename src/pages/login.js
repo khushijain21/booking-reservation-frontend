@@ -86,7 +86,7 @@ const Login = () => {
                     <p className="login__error">  {err} </p>
 
                     <p className="login__text">Do not have an account? &#160;
-                        
+                        <Link to="/signup" className="login__link">Create One</Link>
                     </p>
                 </div>
 
