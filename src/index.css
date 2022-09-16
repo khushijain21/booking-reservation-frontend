@@ -10,8 +10,10 @@
   --clr-white:#fff;
   --clr-grey-1: #aaa;
   --clr-primary-1:#4FBDBA;
+  --clr-primary-2:#2b3748;
   --clr-error:#ff3333;
   --clr-success:#4BB543;
+  --color-grey-light-1: #faf9f9;
 }
 
 /* Global Styless                   **/
@@ -104,11 +106,5 @@ p {
   border-radius: 2px;
 }
 
-.icons{
-  border: none;
-  outline: none;
-  padding: 7px;
-  cursor: pointer;
-  background-color: white;
-}
+
 
