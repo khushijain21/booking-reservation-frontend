@@ -1,42 +1,40 @@
 import { useState } from "react";
 import '../styles/login.css'
 import { Link } from 'react-router-dom';
+import { login } from "../apiCalls/auth";
 
 const Login = () => {
  
     // SET STATES
     const [userDetails, setUserDetails] = useState({
-        email: '',
+        username: '',
         password: ''
     })
 
     const [err, setError] = useState('')
-    const { email, password } = userDetails
+    const { username, password } = userDetails
 
 
-    // // HANDLE REQUESTS 
-    // const handleSubmit = async (e) => {
+    // HANDLE REQUESTS 
+    const handleSubmit = async (e) => {
 
-    //     e.preventDefault()
-    //     try {
+        e.preventDefault()
+        try {
            
-    //         const data = await login(userDetails);
+            const data = await login(userDetails);
 
-    //         console.log(data)
-    //         if (!data.status) setError(data.error)
-    //         else {
-                
-    //             setUser(data.user);
-    //             setRedirect(true)
-    //             console.log(user,'from login')
-    //         }
-    //     }
+            console.log(data)
+            if (!data.success) setError(data.message)
+            else {
+                console.log('from login')
+            }
+        }
 
-    //     catch (err) {
-    //         console.log(err)
-    //         setError(err)
-    //     }
-    // }
+        catch (err) {
+            console.log(err)
+            setError(err)
+        }
+    }
 
     // FRONTEND CODE
     return (
@@ -49,14 +47,14 @@ const Login = () => {
                     <form className="login__form">
 
                         <div className="login__input">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">User Name</label>
                             <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                value={email}
+                                type="text"
+                                name="text"
+                                id="text"
+                                value={username}
                                 onChange={(e) =>
-                                    setUserDetails({ ...userDetails, email: e.target.value })
+                                    setUserDetails({ ...userDetails, username: e.target.value })
                                 }
                                 required />
                         </div>
@@ -78,7 +76,10 @@ const Login = () => {
 
                         <button
                             type="submit"
-                            className="btn btn_submit">
+                            className="btn btn_submit"
+                            onClick={(e)=>{
+                                handleSubmit(e)
+                            }}>
                             Login
                         </button>
                     </form>

@@ -10,7 +10,7 @@ const Navbar = () => {
     return ( 
     <>
     <nav className="nav">
-        <h3 className="nav__heading">lamabooking</h3>
+        <h3 className="nav__heading">bookingapp</h3>
         {/* <div className="nav__links">
             <Link to='/'className="nav__link">All Questions</Link>
             <Link to='/' className="nav__link">Add question</Link>
