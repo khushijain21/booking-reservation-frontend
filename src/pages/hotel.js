@@ -1,8 +1,8 @@
-import "./hotel.css";
-import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
+import "../styles/hotel.css";
+import Navbar from '../components/navbar'
+import Header from "../components/header";
+import MailList from "../components/mailList";
+import Footer from "../components/footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -11,11 +11,11 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../hooks/useFetch";
 import { useLocation, useNavigate } from "react-router-dom";
-import { SearchContext } from "../../context/SearchContext";
-import { AuthContext } from "../../context/AuthContext";
-import Reserve from "../../components/reserve/Reserve";
+import { SearchContext } from "../context/SearchContext";
+import { AuthContext } from "../context/AuthContext";
+import Reserve from "../components/reserve";
 
 const Hotel = () => {
   const location = useLocation();
@@ -64,7 +64,7 @@ const Hotel = () => {
     }
   };
   return (
-    <div>
+    <>
       <Navbar />
       <Header type="list" />
       {loading ? (
@@ -147,7 +147,7 @@ const Hotel = () => {
         </div>
       )}
       {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
-    </div>
+    </>
   );
 };
 

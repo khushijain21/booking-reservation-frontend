@@ -46,10 +46,10 @@ import {
       });
     };
   
-    const { dispatch } = useContext(SearchContext);
-
+    const value = useContext(SearchContext);
+  
     const handleSearch = () => {
-      dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+      value.dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
       navigate("/hotels", { state: { destination, dates, options } });
     };
   
