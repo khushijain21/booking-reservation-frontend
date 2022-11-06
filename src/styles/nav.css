@@ -10,6 +10,9 @@
     color: var(--clr-white);
   }
   
+  .nav__header{
+    position:relative;
+  }
   .nav__heading {
     color: currentColor;
     font-weight: 600;
@@ -22,7 +25,7 @@
     content: '';
     position: absolute;
     top:2px;
-    right: -20px;
+    right: 175px;
     width: 1.4rem;
     height: 3rem;
     background-color: var(--clr-primary-1);

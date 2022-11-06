@@ -10,7 +10,9 @@ const Navbar = () => {
     return ( 
     <>
     <nav className="nav">
+        <Link to='/' className='nav__header'>
         <h3 className="nav__heading">bookingapp</h3>
+        </Link>
         {/* <div className="nav__links">
             <Link to='/'className="nav__link">All Questions</Link>
             <Link to='/' className="nav__link">Add question</Link>

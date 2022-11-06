@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../styles/login.css'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { login } from "../apiCalls/auth";
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
 
     const [err, setError] = useState('')
     const { username, password } = userDetails
-
+    const navigate=useNavigate();
 
     // HANDLE REQUESTS 
     const handleSubmit = async (e) => {
@@ -22,7 +22,7 @@ const Login = () => {
         try {
            
             const data = await login(userDetails);
-
+            navigate('/')
             console.log(data)
             if (!data.success) setError(data.message)
             else {
